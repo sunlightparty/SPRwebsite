@@ -5,16 +5,16 @@ import letters from './Images/Gallery/letters.jpg'
 const galImages = [
     {
         link: photoBooth,
-        name: "360 photo booth"
+        name: "Welcome to Sunlight Party Rentals!"
     },
-    {
-        link: letters,
-        name: "Marquee letter"
-    },
-    {
-        link: bar,
-        name: "Minibar"
-    }
+    // {
+    //     link: letters,
+    //     name: "Marquee letter"
+    // },
+    // {
+    //     link: bar,
+    //     name: "Tables & Chairs"
+    // }
 ];
 
 export default galImages;
