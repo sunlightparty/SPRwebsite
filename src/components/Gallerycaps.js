@@ -5,7 +5,8 @@ import letters from './Images/Gallery/letters.jpg'
 const galImages = [
     {
         link: photoBooth,
-        name: "Welcome to Sunlight Party Rentals!"
+        name: "Welcome to Sunlight Party Rentals!",
+        left: 4,
     },
     // {
     //     link: letters,

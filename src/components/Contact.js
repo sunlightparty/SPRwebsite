@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp, faClock, faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faApple, faGoogle, faInstagram, faFacebook, faYoutube} from '@fortawesome/free-brands-svg-icons';
+import { Helmet } from 'react-helmet';
 import Slplogo from './Images/SLPlogo.png'
 import Applelogo from './Images/applelogo.png'
 import Googlelogo from './Images/googlelogo.png'
 
 function Contact() {
+  
+
   const [clickedIndexes, setClickedIndexes] = useState([]);
   const [showDiv1, setShowDiv1] = useState(false);
   const [showDiv2, setShowDiv2] = useState(false);
@@ -42,13 +45,21 @@ function Contact() {
   };
 
   return (
-    <div className=''>
-    <div className=" py-32 px-2  w-full bg-zinc-50">
-      <div className={` transition-opacity ease-in duration-300  max-w-[400px]  ${showDiv1 ? 'opacity-100' : 'opacity-0'}`}>
-        <div className={` ${clickedIndexes.includes(0) ? 'border-4 border-[#D4AF36] rounded-2xl ' : ''} duration-300`}>
+   <div>
+
+    <Helmet>
+        {/* <title>{`${admin ? "Admin Title" : "Client Title"}`}</title> */}
+        <meta name="description" content="Sunlight Party Rental address. Sunlight Party Rental map. Sunlight Party Rental hours.
+        Sunlight Party Rental instagram. Sunlight Party Rental facebook. Sunlight Party Rental youtube." />
+    </Helmet>
+
+    <div className=' w-full bg-zinc-50  min-h-[764px] md:flex justify-center'>
+    <div className=" px-2  py-[20vh] max-w-[400px]   md:items-center">
+      <div className={` transition-opacity ease-in duration-300  max-w-[400px]  ${showDiv1 ? 'opacity-100' : 'opacity-0'} w-full`}>
+        <div className={` ${clickedIndexes.includes(0) ? 'border-4 border-[#D4AF36] rounded-2xl ' : ''} duration-300 `}>
           <div className={`cursor-pointer py-8 flex  items-center gap-x-3 `}
             onClick={() => handleDivClick(0)}>
-            <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6 "> Address & Maps</p>
+            <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6 md:ml-0 "> Address & Maps</p>
             <FontAwesomeIcon icon={clickedIndexes.includes(0) ? faChevronUp : faChevronDown} style={{ color: "#D4AF36", }} className='text-4xl' />
           </div>
           <div className={`transition-opacity ease-in duration-500 ${clickedIndexes.includes(0) ? 'opacity-100 visible ' : 'opacity-0 hidden'
@@ -62,7 +73,6 @@ function Contact() {
                     <div className='h-16 w-16 rounded-full bg-zinc-300 border flex items-center justify-center'>
                       <img src={Applelogo} className='h-12'/>
                       {/* <FontAwesomeIcon icon={faApple} className='pb-1' size='2xl' color='white' /> */}
-
                     </div>
                   </a>
                   <p> Apple Maps</p>
@@ -89,7 +99,7 @@ function Contact() {
         <div className={`duration-300 max-w-[400px] ${clickedIndexes.includes(1) ? 'border-4 border-[#D4AF36] rounded-2xl ' : ''}`}>
         <div className={`cursor-pointer py-8 flex  items-center gap-x-3`}
           onClick={() => handleDivClick(1)}>
-          <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6"> Contact Info</p>
+          <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6 md:ml-0"> Contact Info</p>
           <FontAwesomeIcon icon={clickedIndexes.includes(1) ? faChevronUp : faChevronDown} style={{ color: "#D4AF36", }} className='text-4xl' />
 
         </div>
@@ -110,7 +120,7 @@ function Contact() {
 
         <div className={`cursor-pointer py-8 flex  items-center gap-x-3`}
           onClick={() => handleDivClick(2)}>
-          <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6"> Hours</p>
+          <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6 md:ml-0"> Hours</p>
           <FontAwesomeIcon icon={clickedIndexes.includes(2) ? faChevronUp : faChevronDown} style={{ color: "#D4AF36", }} className='text-4xl' />
 
         </div>
@@ -135,7 +145,7 @@ function Contact() {
       <div className={`duration-300 max-w-[400px] ${clickedIndexes.includes(3) ? 'border-4 border-[#D4AF36] rounded-2xl ' : ''}`}>
         <div className={`cursor-pointer py-8 flex  items-center gap-x-3`}
           onClick={() => handleDivClick(3)}>
-          <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6"> Social Media</p>
+          <p className="text-4xl font-semibold underline-offset-8 underline text-zinc-800 ml-6 md:ml-0"> Social Media</p>
           <FontAwesomeIcon icon={clickedIndexes.includes(3) ? faChevronUp : faChevronDown} style={{ color: "#D4AF36", }} className='text-4xl' />
 
 
@@ -169,14 +179,14 @@ function Contact() {
                   <p className='text-[#D48D36] underline underline-offset-8'>@SunlightPartyRental</p>
                 </div>
                 </a>
-                
-               
           </div>
         </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
+
   )
 }
 export default Contact

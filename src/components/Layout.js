@@ -9,10 +9,13 @@ function Layout() {
     <ResponsiveAppBar></ResponsiveAppBar>
     </div>
     
-     <div className='bg-zinc-100'>
+     <div className=' relative bg-zinc-100'>
        <Outlet/>
      </div>
+     <footer>
      <Footer></Footer>
+     </footer>
+   
     </>
    
   )

@@ -5,7 +5,7 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 function Footer() {
     return (
-        <div className="h-40 bg-zinc-400 flex flex-col justify-center items-center">
+        <div className="h-40 w-full min-w-[360px] bg-zinc-400 flex flex-col justify-center items-center ">
             <p className='mb-0.5 text-lg'> &copy; 2023 Sunlight Party Rental</p>
             <p className='mb-2 text-lg'> 983 San Pablo Avenue, Albany, CA</p>
             <div className='flex gap-x-2'>

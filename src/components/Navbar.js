@@ -16,7 +16,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
-const pages = [{ name: "Products", href: "#productPage" }, { name: "Pricing", href: "instagram.com" }, { name: "Blog", href: "instagram.com" },];
+const pages = [{ name: "Products", href: "#productPage" }, { name: "Contact", href: "/contact" },];
 
 function ResponsiveAppBar() {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{ background: 'white' }}>
+    <AppBar position="static" style={{ background: 'white', height: '4rem'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -103,7 +103,6 @@ function ResponsiveAppBar() {
                     } else {
                       navigate("/")
                     }
-                    
                   }}
                 >
                   Products</a>
@@ -142,16 +141,36 @@ function ResponsiveAppBar() {
             {/* SPR */}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page, index) => (
-              <Button
-                key={index}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+        
+                <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  var element = document.getElementById('productPage');
+                  if (element){
+                    document.getElementById('prodButton').style.transition = "width 1s; borderRadius 1s;";
+                    document.getElementById('prodButton').style.width = "100%";
+                    document.getElementById('prodButton').style.borderRadius = "0px";
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    navigate("/")
+                  }
+                }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                {page.name}
+                Products
               </Button>
-            ))}
+
+              <Link to={'/contact'}>
+                <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'black', display: 'block' }}
+              >
+                Contact
+              </Button>
+              </Link>
+              
           </Box>
+          
           {/* Contact Button */}
           <Link to={'/contact'}>
             <button className='border px-2 text-sm py-1 font-bold rounded-full'>
